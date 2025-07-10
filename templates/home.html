@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal fade" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white border-0 rounded-3">
+            <div class="modal-header border-0">
+                <h5 id="loginModalLabel" class="modal-title">Welcome Back 👋</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post">
+                    <div class="mb-3">
+                        <input type="email" class="form-control bg-secondary text-white border-0" placeholder="Email Address">
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control bg-secondary text-white border-0" placeholder="Password">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary w-100"><i class="fa fa-sign-in-alt me-2"></i>Log In</button>
+                    </div>
+                </form>
+                <p class="text-center text-muted mt-3">New here? <a href="client-register.html" class="text-info"><strong>Register now</strong></a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<section class="py-5 bg-dark text-white text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Find Your <span class="text-primary">Dream Job</span></h1>
+        <p class="lead mb-4">Explore thousands of job listings from top companies around the world.</p>
+        <form method="get" action="{% url 'jobs:searh' %}" class="row g-2 justify-content-center">
+            <div class="col-md-4">
+                <input type="text" name="position" class="form-control bg-secondary text-white border-0" placeholder="Job Title or Keywords">
+            </div>
+            <div class="col-md-4">
+                <input type="text" name="location" class="form-control bg-secondary text-white border-0" placeholder="Preferred Location">
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary w-100"><i class="fa fa-search me-1"></i>Search</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Featured Jobs -->
+<section class="py-5 bg-black text-white">
+    <div class="container">
+        <h3 class="mb-4 text-primary">🌟 Featured Jobs</h3>
+        <div class="row g-4">
+            {% for job in jobs %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card bg-dark text-white border-0 shadow-sm h-100">
+                    <img src="{% static 'img/featured1.jpg' %}" class="card-img-top" alt="Job Image">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="{% url 'jobs:jobs-detail' job.id %}" class="text-white text-decoration-none">{{ job.title }}</a>
+                        </h5>
+                        <p class="text-muted"><i class="fa fa-map-marker-alt me-1 text-primary"></i>{{ job.location }}</p>
+                        <p>{{ job.description|truncatechars:100 }}</p>
+                        {% if job.type == '1' %}
+                            <span class="badge bg-success">Full Time</span>
+                        {% elif job.type == '2' %}
+                            <span class="badge bg-primary">Part Time</span>
+                        {% else %}
+                            <span class="badge bg-warning text-dark">Internship</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Trending Jobs -->
+<section class="py-5 bg-dark text-white">
+    <div class="container">
+        <h4 class="mb-4 text-primary">🔥 Trending This Month</h4>
+        {% for trending in trendings %}
+        <div class="card mb-3 bg-black text-white border-secondary shadow-sm">
+            <div class="card-body d-flex justify-content-between align-items-center flex-wrap">
+                <div class="d-flex align-items-center">
+                    <img src="{% static 'img/company-1.png' %}" alt="Company Logo" class="me-3 rounded-circle" width="60">
+                    <div>
+                        <h5 class="mb-1">
+                            <a href="{% url 'jobs:jobs-detail' trending.id %}" class="text-white text-decoration-none">{{ trending.title }}</a>
+                        </h5>
+                        <small class="text-muted">{{ trending.company_name }}</small>
+                    </div>
+                </div>
+                <div>
+                    <small class="text-muted"><i class="fa fa-map-marker-alt me-1 text-primary"></i>{{ trending.location }}</small><br>
+                    <small class="text-muted">Posted {{ trending.created_at|timesince }} ago</small>
+                </div>
+                <a href="#" class="btn btn-outline-light btn-sm"><i class="fa fa-star"></i> Save</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Call to Action -->
+ 
+{% endblock %}
