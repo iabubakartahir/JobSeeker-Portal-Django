@@ -65,4 +65,3 @@ The JobSeeker Portal successfully achieves the goal of connecting job seekers an
 - Implement Resume Upload and Parsing
 - Add Email Notification System
 - Introduce AI-Based Job Recommendations
-```
