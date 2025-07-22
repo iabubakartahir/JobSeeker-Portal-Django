@@ -16,7 +16,7 @@ JobSeeker Portal is a web-based application developed using Django framework. Th
 ### Key Objectives
 - Connect Employers and Job Seekers in a Single Platform
 - Allow Employers to Post Jobs and Manage Applicants
-- Enable Job Seekers to Search, Filter, and Apply for Jobs
+- Enable Job Seekers to Search, Filtefr, and Apply for Jobs
 - Provide an Admin Panel for System Management
 
 ### Technologies Used
@@ -30,6 +30,8 @@ The system follows an MVC (Model-View-Controller) architecture using Django. It 
 - Models (Database Layer)
 - Views (Business Logic)
 - Templates (Presentation Layer)
+
+![1](https://github.com/user-attachments/assets/e7890148-17de-4afb-8e25-000d7a326748)
 
 ## Modules Description
 
