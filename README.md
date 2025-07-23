@@ -53,6 +53,16 @@ The system follows an MVC (Model-View-Controller) architecture using Django. It 
 - Control Categories and Job Types
 
 ## Implementation Screenshots
+![1](https://github.com/user-attachments/assets/cbc22f52-777f-40f4-a00c-60ae2f018ee4)
+![4](https://github.com/user-attachments/assets/eb208515-bea0-4882-89e0-0d2a54f86f2c)
+![5](https://github.com/user-attachments/assets/39e3310f-f46c-4bf6-9fa6-d85013227789)
+![6](https://github.com/user-attachments/assets/dfff596e-0920-4867-8978-4e769da49119)
+![7](https://github.com/user-attachments/assets/59150813-75d3-4018-bb63-c3403974257a)
+![4](https://github.com/user-attachments/assets/c8d426ba-f413-4e68-baaa-5fde30163f48)
+![5](https://github.com/user-attachments/assets/de83af95-bda7-4969-98b0-a17f369918f9)
+![6](https://github.com/user-attachments/assets/b2bd3481-c345-449a-8506-8be4c33d9e95)
+
+
 
 
 ## Conclusion
