@@ -60,7 +60,7 @@ class JobCreateView(CreateView):
         return super().dispatch(self.request, *args, **kwargs)
 
     def form_valid(self, form):
-        form.instance.user = self.request.user
+        form.instance.user = self.request.userf
         return super(JobCreateView, self).form_valid(form)
 
     def post(self, request, *args, **kwargs):
