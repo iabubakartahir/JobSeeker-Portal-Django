@@ -1,4 +1,4 @@
-ffffrom django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 from django.http import Http404
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
